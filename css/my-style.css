@@ -144,6 +144,7 @@ button:focus {
 
 /* Home */
 #home {
+  position: relative;
   background-color: var(--color-primary);
   color: var(--color-text);
   padding: 5rem 1rem;
@@ -186,6 +187,27 @@ button:focus {
   background-color: transparent;
   color: var(--color-text);
   outline: 2px solid var(--color-accent);
+}
+
+.custom-shape-divider-bottom-1692183838 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692183838 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 59px;
+}
+
+.custom-shape-divider-bottom-1692183838 .shape-fill {
+  fill: #ffffff;
 }
 
 /* About */
@@ -244,6 +266,7 @@ button:focus {
 
 /* Skills */
 #skills {
+  position: relative;
   background-color: var(--color-primary-variant);
   color: var(--color-text);
 }
@@ -306,6 +329,27 @@ button:focus {
 .bar__value {
   height: 3px;
   background-color: var(--color-accent);
+}
+
+.custom-shape-divider-bottom-1692184049 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692184049 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 45px;
+}
+
+.custom-shape-divider-bottom-1692184049 .shape-fill {
+  fill: var(--color-primary);
 }
 
 /* Work */
@@ -395,7 +439,7 @@ button:focus {
   transform: translateY(0px);
 }
 
-.project__title:after {
+.project__title::after {
   content: '';
   display: block;
   position: relative;
@@ -464,6 +508,7 @@ button:focus {
 
 /* Footer */
 #contact {
+  position: relative;
   background-color: var(--color-primary);
   color: var(--color-text);
 }
@@ -482,6 +527,26 @@ button:focus {
 
 .contact__link:hover {
   color: var(--color-accent);
+}
+
+.custom-shape-divider-top-1692184653 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1692184653 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 45px;
+}
+
+.custom-shape-divider-top-1692184653 .shape-fill {
+  fill: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
