@@ -32,12 +32,18 @@ document.addEventListener('scroll', () => {
 const mobileButton = document.querySelector('.header__mobile__menu');
 const headerMenu = document.querySelector('.header__menu');
 mobileButton.addEventListener('click', () => {
-  if (headerMenu.style.display === 'none') {
-    headerMenu.style.display = 'flex';
-  } else {
-    headerMenu.style.display = 'none';
-  }
+  headerMenu.classList.toggle('header__menu--visible');
 });
 headerMenu.addEventListener('click', () => {
-  headerMenu.style.display = 'none';
+  headerMenu.classList.remove('header__menu--visible');
+});
+
+// arrow 버튼을 클릭하면 부드럽게 해당 섹션으로 이동하는 이벤트
+arrowUp.addEventListener('click', (event) => {
+  event.preventDefault();
+  const targetTop = event.target.getAttribute('href');
+  window.scrollTo({
+    top: targetTop,
+    behavior: 'smooth',
+  });
 });

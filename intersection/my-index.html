@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection Observer</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: deepskyblue;
+        transition: all 250ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+      const boxes = document.querySelectorAll('.box');
+
+      // IntersectionObserver 옵션 설정
+      const observerOptions = {
+        root: null, // 뷰포트를 root로 설정 (null인 경우 전체 문서가 뷰포트)
+        rootMargin: '0px', // root와의 마진
+        threshold: 0.5, // 요소가 50% 이상 화면에 들어올때 처리
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 요소가 화면에 들어왔을 때 active 클래스 추가
+            entry.target.classList.add('active');
+
+            // 한번 활성화되면 관찰 중지
+            // observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      }, observerOptions);
+
+      // 각 .box 요소에 대해 observer를 활성화하여 관찰 시작
+      boxes.forEach((box) => {
+        observer.observe(box);
+      });
+    </script>
+  </body>
+</html>
