@@ -27,3 +27,17 @@ document.addEventListener('scroll', () => {
     arrowUp.classList.remove('arrow-up--visible');
   }
 });
+
+// 모바일 버튼 클릭시 메뉴가 나오는 이벤트
+const mobileButton = document.querySelector('.header__mobile__menu');
+const headerMenu = document.querySelector('.header__menu');
+mobileButton.addEventListener('click', () => {
+  if (headerMenu.style.display === 'none') {
+    headerMenu.style.display = 'flex';
+  } else {
+    headerMenu.style.display = 'none';
+  }
+});
+headerMenu.addEventListener('click', () => {
+  headerMenu.style.display = 'none';
+});

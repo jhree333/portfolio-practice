@@ -131,6 +131,13 @@ button:focus {
   border-radius: 4px;
 }
 
+.header__mobile__menu {
+  display: none;
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 /* Home */
 #home {
   background-color: var(--color-primary);
@@ -492,14 +499,24 @@ button:focus {
   }
 
   .header__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
     padding: 1rem 4rem;
     gap: 1rem;
+    background-color: var(--color-primary);
   }
 
   .header__nav {
+    position: relative;
     width: 100%;
+  }
+
+  .header__mobile__menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 10px;
   }
 
   #home {
